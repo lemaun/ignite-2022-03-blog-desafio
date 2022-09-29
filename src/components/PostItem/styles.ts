@@ -8,10 +8,16 @@ export const PostContent = styled.div`
   border-radius: 10px;
   background: ${props => props.theme.basePost};
   padding: 2rem;
+  cursor: pointer;
+  border: 1px solid ${props => props.theme.basePost};
 
   p {
     color: ${props => props.theme.baseText};
     line-height: 160%;
+  }
+
+  &:hover {
+    border-color: ${props => props.theme.baseLabel};
   }
 `
 
