@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header";
+import { PostItem } from "../../components/PostItem";
 import { ProfileBoard } from "../../components/ProfileBoard";
 import { SearchForm } from "../../components/SearchForm";
-import { PostsContainer } from "./styles";
+import { PostsContainer, PostsList } from "./styles";
 
 export function Home() {
   return (
@@ -10,6 +11,12 @@ export function Home() {
       <ProfileBoard />
       <PostsContainer>
         <SearchForm />
+        <PostsList>
+          <PostItem />
+          <PostItem />
+          <PostItem />
+          <PostItem />
+        </PostsList>
       </PostsContainer>
     </div>
   )

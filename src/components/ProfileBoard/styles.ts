@@ -54,7 +54,12 @@ export const ProfileTitle = styled.div`
     font-size: 0.75rem;
     font-weight: 700;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
+  
 `
 
 export const ProfileDetails = styled.div`

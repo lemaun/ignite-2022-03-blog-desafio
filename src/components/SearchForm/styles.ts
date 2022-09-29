@@ -18,6 +18,9 @@ export const FormContent = styled.form`
     &:placeholder {
       color: ${(props) => props.theme.baseLabel};
     }
+    &:active {
+      border-color: ${(props) => props.theme.blue};
+    }
   }
 
 `

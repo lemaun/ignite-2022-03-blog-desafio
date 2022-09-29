@@ -9,7 +9,7 @@ export function ProfileBoard() {
       <Profile>
         <ProfileTitle>
           <h2>Leandro Lago da Silva</h2>
-          <a>GITHUB <Link size={16}/></a>
+          <a href="#">GITHUB <Link size={16}/></a>
         </ProfileTitle>
         <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
         <ProfileDetails>
