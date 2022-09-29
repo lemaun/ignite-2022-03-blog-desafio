@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BoardContent = styled.div`
+export const PostBoard = styled.div`
   width: 100%;
   max-width: 864px;
   background: ${props => props.theme.baseProfile};
@@ -8,44 +8,17 @@ export const BoardContent = styled.div`
   border-radius: 8px;
   padding: 2rem 2.5rem;
   display: flex;
-  
-  gap: 2rem;
-
-  img {
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-    max-width: 9.25rem;
-    object-fit: cover;
-    max-width: 9.25rem;
-  }
-`
-
-export const Profile = styled.div`
-  width: 100%;
-  display: flex;
   flex-direction: column;
+  
   gap: 0.5rem;
-
-  p {
-    font-size: 1rem;
-    color: ${props => props.theme.baseText};
-    line-height: 160%;
-  }
-
 `
-export const ProfileTitle = styled.div`
+
+export const BoardHeader = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: ${props => props.theme.baseTitle};
-  }
-
   a {
     display: flex;
     align-items: flex-start;
@@ -61,11 +34,16 @@ export const ProfileTitle = styled.div`
   }
   
 `
+export const PostTitle = styled.div`
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: ${props => props.theme.baseTitle};
+`
 
-export const ProfileDetails = styled.div`
+export const PostDetails = styled.div`
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
   color: ${props => props.theme.baseLabel};
 
   span {
@@ -77,4 +55,11 @@ export const DetailItem = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+`
+
+export const PostContainer = styled.main`
+  width: 100%;
+  max-width: 864px;
+  margin: 0 auto 4.5rem;
+  padding: 2.5rem 2rem;
 `
