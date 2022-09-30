@@ -21,7 +21,7 @@ export function Post() {
           <div><a target="_blank" href={fullPost.html_url}>VER NO GITHUB <Link size={16}/></a></div>
         </BoardHeader>
 
-        <PostTitle>JavaScript data types and data structures</PostTitle>
+        <PostTitle>{fullPost.title}</PostTitle>
 
         <PostDetails>
           <DetailItem>

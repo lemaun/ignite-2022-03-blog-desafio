@@ -23,7 +23,7 @@ export function ProfileBoard() {
       <Profile>
         <ProfileTitle>
           <h2>{user.name}</h2>
-          <a href={user.html_url}>GITHUB <Link size={16}/></a>
+          <a target="_blank" href={user.html_url}>GITHUB <Link size={16}/></a>
         </ProfileTitle>
         <p>{user.bio}</p>
         <ProfileDetails>

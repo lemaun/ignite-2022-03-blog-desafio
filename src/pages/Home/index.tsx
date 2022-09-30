@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import { PostItem } from "../../components/PostItem";
 import { ProfileBoard } from "../../components/ProfileBoard";

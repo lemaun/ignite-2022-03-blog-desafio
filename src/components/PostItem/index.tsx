@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BlogContext } from "../../contexts/BlogContext";
 import { dateRelativeToNow } from "../../utils/formatter";
 import { PostContent, PostHeader } from "./styles";
+import ReactMarkdown from "react-markdown";
 
 interface Post {
   body: string;
@@ -32,7 +33,7 @@ export function PostItem(post:Post) {
         <h2>{post.title}</h2>
         <span>{daysFrom}</span>
       </PostHeader>
-      <p>{fragment}</p>
+      <ReactMarkdown children={fragment} />
     </PostContent>
   )
 }

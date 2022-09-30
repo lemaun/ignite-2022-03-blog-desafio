@@ -65,4 +65,6 @@ export const PostContainer = styled.main`
   max-width: 864px;
   margin: 0 auto 4.5rem;
   padding: 2.5rem 2rem;
+
+  line-height: 160%;
 `
