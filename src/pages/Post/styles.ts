@@ -19,14 +19,17 @@ export const BoardHeader = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   
-  a {
+  div {
     display: flex;
     align-items: flex-start;
     gap: 0.25rem;
-    color: ${props => props.theme.blue};
     font-size: 0.75rem;
     font-weight: 700;
-    text-decoration: none;
+    
+    a {
+      color: ${props => props.theme.blue};
+      text-decoration: none;
+    }
 
     &:hover {
       text-decoration: underline;

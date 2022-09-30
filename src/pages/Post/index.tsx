@@ -17,8 +17,8 @@ export function Post() {
       <Header />
       <PostBoard>
         <BoardHeader>
-          <a><NavLink to="/"><ArrowArcLeft size={16}/> VOLTAR</NavLink></a>
-          <a href={fullPost.html_url}>VER NO GITHUB <Link size={16}/></a>
+          <div><NavLink to="/"><ArrowArcLeft size={16}/> VOLTAR</NavLink></div>
+          <div><a target="_blank" href={fullPost.html_url}>VER NO GITHUB <Link size={16}/></a></div>
         </BoardHeader>
 
         <PostTitle>JavaScript data types and data structures</PostTitle>
