@@ -1,34 +1,42 @@
 import { ArrowArcLeft, Calendar, Chat, GithubLogo, Link } from "phosphor-react";
+import { useContext } from "react";
+import ReactMarkdown from "react-markdown";
 import { NavLink } from "react-router-dom";
 import { Header } from "../../components/Header";
+import { BlogContext } from "../../contexts/BlogContext";
+import { dateRelativeToNow } from "../../utils/formatter";
 import { BoardHeader, DetailItem, PostBoard, PostContainer, PostDetails, PostTitle } from "./styles";
 
 export function Post() {
+  const { fullPost } = useContext(BlogContext)
+
+  const daysFrom = dateRelativeToNow(fullPost.created_at)
+
   return (
     <div>
       <Header />
       <PostBoard>
         <BoardHeader>
           <a><NavLink to="/"><ArrowArcLeft size={16}/> VOLTAR</NavLink></a>
-          <a href="#">VER NO GITHUB <Link size={16}/></a>
+          <a href={fullPost.html_url}>VER NO GITHUB <Link size={16}/></a>
         </BoardHeader>
 
         <PostTitle>JavaScript data types and data structures</PostTitle>
 
         <PostDetails>
           <DetailItem>
-            <GithubLogo weight="fill" /> <span>lemaun</span>
+            <GithubLogo weight="fill" /> <span>{fullPost.user.login}</span>
           </DetailItem>
           <DetailItem>
-            <Calendar weight="fill" /> <span>Há 1 dia</span>
+            <Calendar weight="fill" /> <span>{daysFrom}</span>
           </DetailItem>
           <DetailItem>
-            <Chat weight="fill" /> <span>8 comentários</span>
+            <Chat weight="fill" /> <span>{fullPost.comments} comentários</span>
           </DetailItem>
         </PostDetails>        
       </PostBoard>
       <PostContainer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quam eius cumque, voluptate pariatur accusantium, sapiente, asperiores iusto consequuntur quia vel id facere at dolor ad! Eius dolor facere maxime!</p>
+        <ReactMarkdown children={fullPost.body} />
       </PostContainer>
     </div>
   )

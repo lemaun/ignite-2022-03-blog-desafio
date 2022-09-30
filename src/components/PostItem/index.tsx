@@ -1,13 +1,38 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { BlogContext } from "../../contexts/BlogContext";
+import { dateRelativeToNow } from "../../utils/formatter";
 import { PostContent, PostHeader } from "./styles";
 
-export function PostItem() {
+interface Post {
+  body: string;
+  created_at: string;
+  number: number;
+  title: string;
+}
+
+export function PostItem(post:Post) {
+
+  const fragment = post.body.substring(0, 160)+'...'
+  const daysFrom = dateRelativeToNow(post.created_at)
+
+  const {getPost} = useContext(BlogContext)
+
+  const navigate = useNavigate()
+
+  function handleNavigate() {
+    const url = post.title.replaceAll(' ','-')
+    navigate(`/post/${post.number}`)
+    getPost(post.number)
+  }
+
   return (
-    <PostContent>
+    <PostContent onClick={handleNavigate}>
       <PostHeader>
-        <h2>JavaScript data types and data structures</h2>
-        <span>Há 1 dia</span>
+        <h2>{post.title}</h2>
+        <span>{daysFrom}</span>
       </PostHeader>
-      <p>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in ...</p>
+      <p>{fragment}</p>
     </PostContent>
   )
 }
